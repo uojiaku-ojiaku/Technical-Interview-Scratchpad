@@ -1,0 +1,1 @@
+Very easy to learn because it has very simple syntax. 

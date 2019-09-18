@@ -1,0 +1,292 @@
+print("Hello World")
+// Hello World
+
+print("more string")
+
+
+print('more string')
+you can also use single quotes
+
+print(3)
+
+print("more string")
+print(3)
+// more string
+// 3
+
+VARIABLES in Python
+
+ a = 1
+ assign this number 1 to the variable named a
+ nothing will be printed to the console this time but the variable a now refers to the value 1
+
+ you can check what's in the value of a by printing the variable
+ print(a)
+ No double quotes or single quotes are used because a is not a string, but a variable
+ // 1 (result in console)
+
+ b = 2
+convention is b space, equal sign, space value
+assign the value 2 to the variable b
+
+if you haven't for example, seen this code and you want to know what is inside the value b, all you would have to do is write this command
+print(b)
+// 2
+also note that you are running the cells by clicking forward on the jupyter notebook (not by add a semicolon and hitting enter)
+
+Just like before, we can write multiple lines within a single cell by writing
+print(a)
+pring(b)
+// 1
+// 2
+
+A variable doesn't necessarily refer to a number
+you can also write
+c = "hello there"
+and when you run the cell c now refers to the string hello there
+
+print(c)
+// hello there
+
+It's totally possible for two or more variables in python to refer to the same value
+for example,
+b = 2
+d = 2
+
+It's also possible for you to reassign an existing variable to another value. 
+so if we write
+b = 1
+(after previously writing b = 2)
+b = 1 will override the previous assignment
+
+You can also reassign an existing variable which once referred to a number to a different type like a string for example. 
+b = 1
+b = "I am now something new"
+b will now be the second assignment
+
+What happens if you try to print a variable that doesn't exist yet?
+for example,
+print(e)
+It will give you an error, because e does not exist yet. And the error states:
+NameError: name 'e' is not defined
+
+so let's fix that 
+e = "this is a string"
+
+print(e)
+// this is a string
+
+Is it possible for us to assign a variable to another variable? The answer is yes.
+Take for example you write...
+a = 1
+c = "hello world"
+
+What happens then if you write...?
+f = a
+
+This means the variable f refers to the value a refers to. That means f refers to 1 now
+
+** important. Therefore, f does not refer to the value a. Instead, f refers to the value a is referring to. 
+
+*** This is important because then if you write
+a = 2 afterwards
+a now refers to the value 2, but f stays at the value 1. This might not be the case if f was referring to the variable a.
+
+PRACTICE PROBLEM
+v1 = "first string"
+v2 = "second string"
+how do you swap the values within these two variables with each other?
+
+the easiest way would just be to do 
+v1 = "second string"
+v2 = "first string"
+but that may not be the best solution all of the time
+
+ideally you want to be able to solve this problem without repeat writing the strings
+
+My solution:
+v1 = v2
+v2 = v1
+*** This is actually wrong because v1 will refer to second string, and afterwards v2 will refer to what v1 is referring to which is second string
+
+Good solutions:
+First solution
+v1 = "first string"
+v2 = "second string"
+
+temp1 = v1
+temp2 = v2
+
+v1 = temp2
+v2 = temp1
+
+Second solution (using on one temp variable)
+v1 = "first string"
+v2 = "second string"
+
+temp = v1
+v1 = v2
+v2 = temp
+
+(drawing it out like the youtube video did is very helpful)
+https://www.youtube.com/watch?v=Z1Yd7upQsXY
+
+you can execute cells in any order that you like 
+you have the control by choosing what order you hit forward and execute a command 
+
+** Click restart and clear output restarts the kernal and clears out any output results -- if you want to clear out the state of the jupyter notebook and clear out all the variables you have defined. Or you can just click restart
+
+Also remember that there is one kernal per notebook file
+So if you clear the kernal for one notebook, that won't affect a different notebook you have because it has a seperate kernal. 
+
+IF ELSE STATEMENTS
+a = 1
+b = 2 
+print ("a is less than b") -- we want to print this string only if a is actually less than b
+
+we can do so by writing
+if a < b:
+    print("a is less than b")
+
+creating a new line and indenting it by FOUR spaces. You can use a different amount of spaces but using FOUR spaces is a convention in python - so let's stick to it. 
+
+this whole statement above is called an if clause
+
+and after this if clause, you can have more code. For example...
+
+a = 1
+b = 2
+if a < b:
+    print("a is less than b")
+print("Not sure if a is less than b")
+
+So this if condition only applies to the first line --- print("a is less than b") --- in this example. Python knows that because of the colon sign and the four spaces of indentation before the first line. 
+
+Because a is currently less than b, the console will print
+// a is less than b 
+// Not sure if a is less than b
+
+Let's see what happens if a is 3...
+console prints...
+// Not sure if a is less than be
+
+It is also possible to have multiple lines within the if clause. For example,
+a = 3
+b = 2
+if a < b:
+    print("a is less than b")
+    print("a is definitely less than b")
+print("Not sure if a is less than b")
+
+In the above statement, python knows that the first two statements are a part of the if clause because both of the lines have an indent of FOUR spaces in front of them. 
+
+Therefore, if we make a less than b again, we will get...
+a = 1
+b = 2
+if a < b:
+    print("a is less than b")
+    print("a is definitely less than b")
+print("Not sure if a is less than b")
+// a is less than b
+// a is definitely less than b
+// Not sure if a is less than b
+
+** You need to be very careful of the number of spaces you put in front of the lines because for example --- if we put four spaces in front of the first line and five spaces in front of the second, you will get an error. The error states IndentationError: unexpected indent
+
+you can fix that by making both of the indentations four spaces
+
+c = 3
+d = 4
+if c < d:
+    print("c is less than d")
+else:
+    print("c is NOT less than d")
+    print("I don't think c is less than d")
+print("outside the if block")
+// c is less than defined
+// outside the if block 
+
+c = 5
+d = 4
+if c < d:
+    print("c is less than d")
+else:
+    print("c is NOT less than d")
+    print("I don't think c is less than d")
+print("outside the if block")
+// c is NOT less than d
+// I don't think c is less than d
+// outside the if block 
+
+e = 7
+f = 8
+if e < f:
+    print("e is less than f")
+elif e == f:
+    print("e is equal to f")
+else:
+    print("e is greater than f")
+// e is less than f
+
+
+**elif (remember this term)
+
+**Note that we are using the double equal sign in elif instead of the single equal sign. The difference is that when you use the single equal sign, you are assigning on the right hand side to the left hand side. In python and many other languages, the single equal sign is an assignment operator. If you want to check if e is equal to f, you have to use the double equal sign. In this case, we are not assigning, but evaluating. 
+
+you can also have multiple elif evaluators
+
+e = 20
+f = 8
+if e < f:
+    print("e is less than f")
+elif e == f:
+    print("e is equal to f")
+elif e > f + 10:
+    print("e is greater than f by more than 10")
+else:
+    print("e is greater than f")
+// e is greater than f by more than 10
+
+
+
+g = 7
+h = 8
+if g < h:
+    print("g is less than h")
+else:
+    if g == h:
+        print("g is equal to h")
+    else:
+        print("g is greaer than h")
+
+another option, without using elif statements
+
+BMI CALCULATOR
+
+name = "YK"
+height_m = 2
+weight_kg = 110
+
+bmi = weight_kg / (height_m * height_m) 
+or
+bmi = weight_kg / (height_m ** 2) 
+
+print("bmi: ")
+print(bmi)
+if bmi < 25:
+    print(name)
+    print("is not overweight")
+else:
+    print(name)
+    print("is overweight")
+// bmi:
+// 27.5
+// YK
+// is overweight
+
+https://www.youtube.com/watch?v=AWek49wXGzI
+
+
+Next Video to Watch:
+How To Use Functions In Python (Python Tutorial #3)
+https://www.youtube.com/watch?v=NSbOtYzIQI0
