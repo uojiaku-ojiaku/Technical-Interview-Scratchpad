@@ -284,9 +284,118 @@ else:
 // YK
 // is overweight
 
-https://www.youtube.com/watch?v=AWek49wXGzI
+# functions are a collection of instructions
+# or functions are a collection of code
+(above are comments in python)
+
+def function1():
+    print("ahhhhhh")
+    print("ahhhhhhh 2")
+print("this is outside the function")
+// this is outside the function
+
+only the last line got printed because the function has been defined but has not been called
+
+function1()
+calls the function
+
+Therefore
+function1()
+ahhhhhh
+ahhhhhhh 2
+
+# functions can also be a mapping
+
+def function2(x):
+    return 2*x
+this means define function2, which is going to take an input or argument, in this case we are calling x, and return 2*x. So we are mapping the input x to the ouptut 2*x 
+
+To use/call this function, we can write
+a = function2(3)
+Then the value of a is called a return value or output
+
+print(a)
+// 6
+
+b = function2(4)
+// 8
+
+c = function2(5)
+// 10 
+
+what if we run a function with no argument inside?
+d = function2()
+// it will give an error stating
+function2() missing 1 required positional argument 'x'
+
+is it possible to have multiple arguments in a single function? The answer is yes
+
+def function3(x, y)
+    return x + y
+
+e = function(1, 2)
+print(e)
+// 3
+
+you can also combine functions that are collections of code and functions that are mapping together
+def function4(x):
+    print(x)
+    print("still in this function")
+    return 3*x 
+
+lets call the function by the following
+f = function4(4)
+// 4
+// still in this function
+
+print(f)
+// 12
 
 
-Next Video to Watch:
-How To Use Functions In Python (Python Tutorial #3)
-https://www.youtube.com/watch?v=NSbOtYzIQI0
+def function5(some_argument):
+    print(some_argument)
+    print("weeeee")
+
+function5(4)
+// 4
+// weeeee
+
+# BMI calculator 
+name1 = "YK"
+height_m1 = 2
+weight_kg1= 90
+
+name2 = "YK's sister"
+height_m2 = 1.8
+weight_kg2 = 70
+
+name3 = "YK's brother"
+height_m3 = 2.5
+weight_kg3 = 160
+
+def bmi_calculator(name, height_m, weight_kg):
+    bmi = weight_kg / (height_m ** 2)
+    print("bmi: ")
+    print(bmi)
+    if bmi < 25:
+        return name + " is not overweight"
+    else: 
+        return nmae + " is overweight"
+
+result1 = bmi_calculator(name1, height_m1, weight_kg1)
+result2 = bmi_calculator(name2, height_m2, weight_kg2)
+result3 = bmi_calculator(name3, height_m3, weight_kg3)
+// bmi:
+// 22.5
+// bmi:
+// 21.604938...
+// bmi:
+// 25.6
+
+print(result1)
+print(result2)
+print(result3)
+// YK is not overweight
+// YK's sister is not overweight
+// YK's brother is overweight
+
