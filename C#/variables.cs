@@ -18,7 +18,8 @@ bool isMale = false;
 // =================================================================================================================================
 
 string phrase = "Giraffe Academy" + " is cool"; //-- concatenation 
-
+int num1 = Console.ReadLine();
+int num1 = Convert.ToInt32(Console.ReadLine());
 
 
 
